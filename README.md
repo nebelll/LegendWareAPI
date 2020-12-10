@@ -1,4 +1,5 @@
 Have fun on your lw paste if you actually learn from this
+Edit: Imma update it in a few days this isnt the whole API
 
 
 
