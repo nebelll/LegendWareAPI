@@ -58,7 +58,8 @@ end
 
 events.register_event("player_hurt", hurt)
 ```
-Some extra information :
+Some extra information:
+```
 game_event:get_bool
 game_event:get_int
 game_event:get_float
@@ -67,6 +68,7 @@ game_event:set_bool
 game_event:set_int
 game_event:set_float
 game_event:set_string
+```
 
 
           Console
