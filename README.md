@@ -265,3 +265,210 @@ end
 
 client.add_callback("on_paint", draw)
 ```
+
+
+          Engine
+
+-Returns hltv state
+
+Syntax: engine.is_hltv
+```ruby
+local function draw()
+  if engine.is_hltv() then
+    render.draw_triangle(100, 100,  120, 90, 80, 90, color.new(255, 0, 0))
+  end
+end
+
+client.add_callback("on_paint", draw)
+```
+
+-Returns taking steam-screenshot state
+
+Syntax: engine.is_taking_screenshot
+```ruby
+local function draw()
+  if not engine.is_taking_screenshot() then
+    render.draw_triangle(100, 100,  120, 90, 80, 90, color.new(255, 0, 0))
+  end
+end
+
+client.add_callback("on_paint", draw)
+```
+
+-Returns pause state
+
+Syntax: engine.is_paused
+```ruby
+local function draw()
+  if engine.is_paused then
+    render.draw_triangle(100, 100,  120, 90, 80, 90, color.new(255, 0, 0))
+  end
+end
+
+client.add_callback("on_paint", draw)
+```
+
+-Returns recording demo state
+
+Syntax: engine.is_recording_demo
+```ruby
+local function draw()
+  if engine.is_recording_demo() then
+    render.draw_triangle(100, 100,  120, 90, 80, 90, color.new(255, 0, 0))
+  end
+end
+
+client.add_callback("on_paint", draw)
+```
+
+-Returns playing demo state
+
+Syntax: engine.is_playing_demo
+```ruby
+local function draw()
+  if engine.is_playing_demo() then
+    render.draw_triangle(100, 100,  120, 90, 80, 90, color.new(255, 0, 0))
+  end
+end
+
+client.add_callback("on_paint", draw)
+```
+
+-Returns current map group name
+
+Syntax: engine.get_map_group_name
+```ruby
+local function draw()
+  local font =  render.create_font("Verdana", 12, 600, true, true, true)
+  render.draw_text(font, 100, 100, color.new(255, 0, 0), tostring(engine.get_map_group_name()))
+end
+
+client.add_callback("on_paint", draw)
+```
+
+-Returns current short map name
+
+Syntax: engine.get_level_name_short
+```ruby
+local function draw()
+  local font =  render.create_font("Verdana", 12, 600, true, true, true)
+  render.draw_text(font, 100, 100, color.new(255, 0, 0), tostring(engine.get_level_name_short()))
+end
+
+client.add_callback("on_paint", draw)
+```
+
+-Returns current map name
+
+Syntax: engine.get_level_name
+```ruby
+local function draw()
+  local font =  render.create_font("Verdana", 12, 600, true, true, true)
+  render.draw_text(font, 100, 100, color.new(255, 0, 0), tostring(engine.get_level_name()))
+end
+
+client.add_callback("on_paint", draw)
+```
+
+-Returns connected state
+
+Syntax: engine.is_connected
+```ruby
+local function draw()
+  if engine.is_connected() then
+      render.draw_triangle(100, 100,  120, 90, 80, 90, color.new(255, 0, 0))
+  end
+end
+
+client.add_callback("on_paint", draw)
+```
+
+-Returns in-game state
+
+Syntax: engine.is_in_game
+```ruby
+local function draw()
+  if engine.is_in_game() then
+      render.draw_triangle(100, 100,  120, 90, 80, 90, color.new(255, 0, 0))
+  end
+end
+
+client.add_callback("on_paint", draw)
+```
+
+-Sets new view angle
+
+Syntax: engine.set_view_angles
+```ruby
+local function cm()
+  local viewangles = engine.get_view_angles()
+  engine.set_view_angles(vector.new(viewangles.x, viewangles.y + 180.0, viewangles.z))
+end
+
+client.add_callback("on_createmove", cm)
+```
+
+-Returns current view angles
+
+Syntax: engine.get_view_angles
+```ruby
+local function cm()
+  local viewangles = engine.get_view_angles()
+end
+
+client.add_callback("on_createmove", cm)
+```
+
+-Returns local player index
+
+Syntax: engine.get_local_player_index
+```ruby
+local function draw()
+  local player = engine.get_player_for_user_id(1)
+  local me = engine.get_local_player_index()
+  if player ~= me then
+      -- something
+  end
+end
+
+client.add_callback("on_paint", draw)
+```
+
+-Returns player for user ID
+
+Syntax: engine.get_player_for_user_id
+```ruby
+local function draw()
+  local player = engine.get_player_for_user_id(1)
+  local me = engine.get_local_player_index()
+  if player ~= me then
+      -- something
+  end
+end
+
+client.add_callback("on_paint", draw)
+```
+
+-Returns screen width
+
+Syntax: render.get_screen_width
+```ruby
+local function screen_sizes()
+    local screen_width = render.get_screen_width()
+    local screen_height = render.get_screen_height()
+end
+
+client.add_callback("on_paint", screen_sizes)
+```
+
+-Returns screen height
+
+Syntax: render.get_screen_height
+```ruby
+local function screen_sizes()
+    local screen_width = render.get_screen_width()
+    local screen_height = render.get_screen_height()
+end
+
+client.add_callback("on_paint", screen_sizes)
+```
